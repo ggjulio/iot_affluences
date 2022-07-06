@@ -28,9 +28,11 @@ def retention_policy(folder: str):
         os.remove(fullpath)
       except:
         sys.stderr.write("Could not remove :", filename)
+        exit(1)
 
 
 def main():
+    retention_policy()
     date = dt.datetime.now().date()
     with open(f"{LOG_PATH}/{date}", "a") as logfile:
         logfile.write(get_report(CPU_PROBE_INTERVAL, DEVICE_PATH)+ '\n')
