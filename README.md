@@ -12,7 +12,7 @@ But it would have been stupid to don't use existing code. So I just written a se
 Which is also more efficient than a shell script who spawn a lot of commands and pipe them... And some commands probably call syscalls. (Switching contexts between user and kernel space too often is time consuming)
 while with the python script it probably doesn't happen that much)
 In our case, a shell script is not a problems because our iot devices like jetson are pretty powerfull and are probably connected to the mains.
-But based on the execution interval of this script, and consuption requirements. We may want to optimize the efficiency and number of instructions executed by the cpu.
+But based on the execution interval of this script and in a context of low consuption requirements. We may want to optimize the efficiency and the number of instructions executed by the cpu.
 
 #### Format size and storage
 
