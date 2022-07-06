@@ -32,7 +32,9 @@ max line size: 27 + 7 + 64 + 15 = 113 bytes
 line size with hostname 'affluences': 27 + 7 + 10 + 15 = 59 bytes
 
 The script run 14 hours per day, so 840 minutes.
-Running a cronjob every minutes will create on average file log of 50 kilobytes.
+Running a cronjob every minutes will create on average a logfile per day of 50 kilobytes.
+
+with the retention policy of 14 days. It adds up to 700KB.
 
 #### The schedule expression used to run the cronjob
 `*/1 8-22 * * 1-5`

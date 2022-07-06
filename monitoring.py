@@ -15,8 +15,16 @@ def get_report(cpu_probe_interval: int, device_disk_path: str):
 	disk=psutil.disk_usage('/dev/sda1').percent
 	return (f"[{date}] {hostname} - {cpu};{ram};{disk}")
 
+# def retention_policy():
+# 		return
+
 def main():
-	print(get_report(CPU_PROBE_INTERVAL, DEVICE_PATH))
+	date= dt.date.now()
+	print(date)
+	# with open("test.txt", "a") as myfile:
+  #   myfile.write("appended text")
+
+	# print(get_report(CPU_PROBE_INTERVAL, DEVICE_PATH))
 
 if __name__ == "__main__":
 	main()
