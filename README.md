@@ -1,5 +1,8 @@
  
 I coded two scripts that does the same thing. One in shell and another one in python.
+Scripts are stored in `/usr/local/bin`
+The script is run by the root user's cronjob `sudo cronjob -l`
+
 ##### The shell version
 I find out that the objectif was pretty similar to a script,
 I have written a while ago as a beta tester for a new 42 cursus projet.
