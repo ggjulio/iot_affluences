@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import time
 import psutil
 import socket
 import datetime as dt
@@ -7,7 +8,7 @@ import os
 import sys
 
 CPU_PROBE_INTERVAL = 1
-DEVICE_PATH = "/dev/sda2"
+DEVICE_PATH = "/dev/sda1"
 LOG_PATH = "/var/log/affluences"
 RETENTION_DAYS = 14
 
@@ -23,7 +24,8 @@ def get_report(cpu_probe_interval: int, device_disk_path: str):
 def retention_policy(folder: str):
   for filename in os.listdir(folder):
     fullpath = os.path.join(folder, filename)
-    if os.stat(fullpath).st_mtime <= dt.time() - (RETENTION_DAYS * 24 * 60 * 60):
+    nb_days = time.time() - (RETENTION_DAYS*24*60*60)
+    if os.stat(fullpath).st_mtime <= nb_days:
       try:
         os.remove(fullpath)
       except:
@@ -32,7 +34,7 @@ def retention_policy(folder: str):
 
 
 def main():
-    retention_policy()
+    retention_policy(LOG_PATH)
     date = dt.datetime.now().date()
     with open(f"{LOG_PATH}/{date}", "a") as logfile:
         logfile.write(get_report(CPU_PROBE_INTERVAL, DEVICE_PATH)+ '\n')
