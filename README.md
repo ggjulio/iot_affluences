@@ -1,17 +1,18 @@
-#### 
+ 
 I coded two scripts that does the same thing. One in shell and another one in python.
-##### The shell one,
+##### The shell version
 I find out that the objectif was pretty similar to a script,
 I have written a while ago as a beta tester for a new 42 cursus projet.
 So I took some part of this old script. (I just made the [repo public](https://github.com/ggjulio/born2beroot) if you want to look at the original script)
 
 
-##### Python
+##### The Python one 
 It was not really fair for others candidates, to take some code I already written a while ago.
-So I just written a second one in python.
-Which is also more efficient than a shell script who spawn a lot of commands and pipe them. And some of them probably calling syscalls. (Switching contexts between user space and kernel space take time, while with the python script it probably doesn't happen that much)
-In our case, it is not a problems because your iot devices like jetson are pretty powerfull and are probably connected to the mains.
-But based on the execution interval, and consuption requirements. We may want to optimize the efficiency.
+But it would have been stupid to don't use existing code. So I just written a second one in python.
+Which is also more efficient than a shell script who spawn a lot of commands and pipe them... And some commands probably call syscalls. (Switching contexts between user and kernel space too often is time consuming)
+while with the python script it probably doesn't happen that much)
+In our case, a shell script is not a problems because our iot devices like jetson are pretty powerfull and are probably connected to the mains.
+But based on the execution interval of this script, and consuption requirements. We may want to optimize the efficiency and number of instructions executed by the cpu.
 
 #### Format size and storage
 
