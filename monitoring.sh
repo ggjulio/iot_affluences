@@ -36,7 +36,7 @@ get_report(){
 	echo "[$(date -Iseconds)] $(hostname) - $(get_cpu_usage);$(get_ram_usage);$(get_disk_usage)"
 }
 
-# Just a simple function to remove all file created >= 14 days.
+# Just a simple function to remove all file created >= N days.
 # Not really great because it run everytime. It could be run only once a day as a separate script.
 # Or I could have used an external tool for rotation, but the retention asked is pretty simple. So I avoided fancy tools.
 retention_policy(){
